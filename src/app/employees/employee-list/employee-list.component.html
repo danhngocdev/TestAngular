@@ -1,0 +1,25 @@
+
+<div class="container">
+   <div class="col-md-5">
+    <app-employee></app-employee>
+   </div>
+   <div class="col-md-7">
+    <table class="table table-hover">
+      <tr>
+        <th>NAME</th>
+        <th>username</th>
+        <th>passwords</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let emp of service.list">
+        <td (click)="populateForm(emp)">[{{emp.Name}}]</td>
+        <td (click)="populateForm(emp)">{{emp.username}}</td>
+        <td (click)="populateForm(emp)">{{emp.passwords}}</td>
+        <td><button (click)="onDelete(emp.Id)" class="btn btn-sm btn-outline-danger">X</button></td>
+      </tr>
+    </table>  
+   </div>
+    <button (click)="Logout()">Logout</button>
+</div>
+
+
